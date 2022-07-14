@@ -1,0 +1,30 @@
+<table class="table table-striped" id="spesialis">
+    <thead>                                 
+      <tr>
+        <th class="text-center">No</th>
+        <th>Nama Spesialis</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>                                 
+      <% for(let i = 0; i < spesialis.length; i++) { %>
+        <tr>
+            <td class="text-center"><%= i + 1 %></td>
+            <td><%= spesialis[i].name %></td>
+            <td>
+                <form action="/spesialis/delete/<%= spesialis[i]._id %>?_method=DELETE" method="POST">
+                    <a href="/spesialis/edit/<%= spesialis[i]._id %>" class="btn btn-warning">
+                        <i class="fas fa-pencil-alt"></i>
+                        Ubah
+                    </a>
+                    <button class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                        Hapus
+                    </button>
+                    
+                </form>
+            </td>
+        </tr>
+    <% } %>
+    </tbody>
+  </table>

@@ -1,0 +1,28 @@
+<%- include ../../partials/header.ejs %> 
+<%- include ../../partials/navbar.ejs %> 
+<%- include ../../partials/sidebar.ejs %> 
+
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Rekam Medis</h1>
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item">Rekam Medis</div>
+      </div>
+    </div>
+
+    <%- include ../../partials/message.ejs %>
+    <div class="section-body">
+      <div class="card">
+        <div class="card-body">
+          <%- include ./table_rekam_medis.ejs %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- include ../../partials/footer.ejs %> 
+<%- include ../../partials/js.ejs %> 
+<%- include ../../partials/rekamedis.ejs %> 

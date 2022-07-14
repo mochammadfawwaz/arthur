@@ -1,0 +1,40 @@
+<table class="table table-striped" id="departemen">
+    <thead>                                 
+      <tr>
+        <th>
+          No
+        </th>
+        <th>Nama Perawat</th>
+        <th>Departemen</th>
+        <th>Spesialis</th>
+        <th>No Telepon</th>
+        <th class="text-center">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>                                 
+        <% for(let i = 0; i < perawat.length; i++) { %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= perawat[i].nama %></td>
+                <td>
+                    <% perawat[i].departement.forEach(departement => { %>
+                        <%= departement.name %>
+                        <% }) %>
+                    </td>
+                <td><%= perawat[i].spesialis %></td>
+                <td><%= perawat[i].no_telepon %></td>
+                <td class="text-center">
+                    <form action="/perawat/delete/<%= perawat[i]._id %>?_method=DELETE" method="POST">
+                        <a href="/perawat/edit/<%= perawat[i]._id %>" class="btn btn-warning">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+     
+    </tbody>
+  </table>

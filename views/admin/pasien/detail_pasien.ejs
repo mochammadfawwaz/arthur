@@ -1,0 +1,105 @@
+<%- include ../../partials/header.ejs %> 
+<%- include ../../partials/navbar.ejs %> 
+<%- include ../../partials/sidebar.ejs %> 
+
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Detail Pasien</h1>
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="/pasien">Pasien</a></div>
+        <div class="breadcrumb-item">Detail Pasien</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Detail Pasien: <%= pasien.nama %> </h4>
+            <div class="text-right">
+              <a href="/pasien" class="btn btn-success rounded">Kembali</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-body ">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label>Nama Pasien</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.nama %>" readonly>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Nomor Medis</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.no_medis %>" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label>NIK</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.nik %>" readonly>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Penyakit</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.penyakit %>" >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                      <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.jenis_kelamin %>" readonly>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Alamat</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.alamat %>">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label>Agama</label>
+                      <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.agama %>" readonly>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>No  Telepon</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.no_telepon %>">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label>Dokter</label>
+                      <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.dokters[0].nama %>" readonly>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Perawat</label>
+                    <input type="text" class="p-2 form-control-plaintext border rounded" value="<%= pasien.perawats[0].nama %>">
+                  </div>
+                </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- include ../../partials/footer.ejs %> 
+<%- include ../../partials/js.ejs %> 

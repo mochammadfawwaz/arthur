@@ -1,0 +1,7 @@
+const char* ssid = "s-teh-anget";
+const char* password = "bayarpakaiovo";
+
+http.begin("http://localhost:3000/api/v1/auth/query/");  
+
+mongodb+srv://mcfawwaz:<password>@cluster0.yo6wr.mongodb.net/?retryWrites=true&w=majority
+

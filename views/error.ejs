@@ -1,0 +1,18 @@
+<%- include('./partials/header.ejs') %>
+<section class="section">
+    <div class="container mt-5">
+      <div class="page-error">
+        <div class="page-inner">
+          <h1><%= error.status %></h1>
+          <div class="page-description">
+            <%= message %>
+          </div>
+        </div>
+      </div>
+      <div class="simple-footer mt-5">
+        hohoho mau cari apa
+      </div>
+    </div>
+  </section>
+  <p><%= error.stack %></p>
+<%- include('./partials/js.ejs') %>

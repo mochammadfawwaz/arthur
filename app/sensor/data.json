@@ -1,0 +1,22 @@
+/** 
+* Paste one or more documents here
+*/
+{
+  "role": "admin",
+  "status": "Y",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$2ATMEfhS1nt5c3VXgzlaqe3epJFTuY7.oKpORdOgqtxFNYLcndCFW",
+  "no_telepon": "08154023799",
+  "nama": "Admin Katalis",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1621946503122"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1621946503122"
+    }
+  },
+  "__v": 0
+}

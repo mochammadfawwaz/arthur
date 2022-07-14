@@ -1,0 +1,46 @@
+<%- include ../../partials/header.ejs %> 
+<%- include ../../partials/navbar.ejs %> 
+<%- include ../../partials/sidebar.ejs %> 
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Rekam Medis</h1>
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="/rekam-medis/">Rekam Medis</a></div>
+        <div class="breadcrumb-item">Ubah Rekam Medis</div>
+      </div>
+    </div>
+
+    <div class="section-body">
+      <div class="card">
+        <form action="/rekam-medis/edit/<%= pasien._id %>?_method=PUT" method="POST">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="kategori">Nama pasien</label>
+              <input type="text" name="nama" value="<%= pasien.nama %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Nomor Medis</label>
+              <input type="text" name="no_medis" value="<%= pasien.no_medis %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan nomor medis pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Sensor pH</label>
+              <input type="text" name="ph" value="<%= pasien.ph %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan ph pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Sensor Volume</label>
+              <input type="text" name="volume" value="<%= pasien.volume %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan volume pasien">
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<%- include ../../partials/footer.ejs %> 
+<%- include ../../partials/js.ejs %> 

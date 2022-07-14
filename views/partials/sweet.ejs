@@ -1,0 +1,9 @@
+<script>
+    $(document).ready(function () {
+        if ("<%= alert.message %>" != "") {
+          const alertMessage = "<%= alert.message %>"
+          const alertStatus = "<%= alert.status %>"
+          swal('Pesan', alertMessage, alertStatus);
+          }
+      })
+</script>

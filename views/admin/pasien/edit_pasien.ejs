@@ -1,0 +1,95 @@
+<%- include ../../partials/header.ejs %> 
+<%- include ../../partials/navbar.ejs %> 
+<%- include ../../partials/sidebar.ejs %> 
+<div class="main-content">
+  <section class="section">
+    <div class="section-header">
+      <h1>Pasien</h1>
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="/pasien/">Pasien</a></div>
+        <div class="breadcrumb-item">Ubah Pasien</div>
+      </div>
+    </div>
+
+    <div class="section-body">
+      <div class="card">
+        <form action="/pasien/edit/<%= pasien._id %>?_method=PUT" method="POST">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="kategori">Nama pasien</label>
+              <input type="text" name="nama" value="<%= pasien.nama %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan nama pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Nomor Medis</label>
+              <input type="text" name="no_medis" value="<%= pasien.no_medis %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan nomor medis pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">NIK</label>
+              <input type="text" name="nik" value="<%= pasien.nik %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan nik pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Alamat</label>
+              <input type="text" name="alamat" value="<%= pasien.alamat %> " class="form-control" id="exampleInputEmail1" placeholder="Masukkan alamat pasien">
+            </div>
+            <div class="form-group">
+              <label for="kategori">Jenis Kelamin</label>
+              <select name="jenis_kelamin" class="form-control" id="color">
+                <% if(pasien.jenis_kelamin !== "Laki-laki") { %>
+                  <option value="Perempuan">Perempuan</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                <% } else { %>
+                  <option value="Laki-laki">Laki-laki</option>  
+                  <option value="Perempuan">Perempuan</option>  
+                <% } %>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Agama</label>
+              <select class="form-control select2" name="agama" style="width: 100%;" required>
+                <option selected="selected">Pilih Agama</option>
+                <option value="Islam">Islam</option>
+                <option value="Budha">Budha</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Konghucu">Konghucu</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katolik">Katolik</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Penyakit</label>
+              <input type="text" name="penyakit" class="form-control" id="exampleInputEmail1" placeholder="Masukkan penyakit pasien" value="<%= pasien.penyakit %> ">
+            </div>
+            <div class="form-group">
+              <label>Nomor Telepon</label>
+              <input type="text" name="no_telepon" class="form-control" id="exampleInputEmail1" placeholder="Masukkan nomor telepon pasien" value="<%= pasien.no_telepon %> ">
+            </div>
+            <div class="form-group">
+              <label>Dokter</label>
+              <select class="form-control select2" name="dokters" style="width: 100%;"  required >
+                <option selected="selected">Pilih dokter</option>
+                <% dokter.forEach(dokter => { %>
+                    <option value="<%= dokter.id %>"><%= dokter.nama %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Perawat</label>
+              <select class="form-control select2" name="perawats" style="width: 100%;" required >
+                <option selected="selected">Pilih Perawat</option>
+                <% perawat.forEach(perawat => { %>
+                    <option value="<%= perawat.id %>"><%= perawat.nama %></option>
+                <% }) %>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="/dokter" class="btn btn-danger">Batal</a>
+          </div>
+          <!-- /.card-body -->
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<%- include ../../partials/footer.ejs %> 
+<%- include ../../partials/js.ejs %> 

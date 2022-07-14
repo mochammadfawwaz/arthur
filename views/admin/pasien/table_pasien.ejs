@@ -1,0 +1,48 @@
+<div class="table-responsive">
+    <table class="table table-striped" id="departemen">
+        <thead>                                 
+          <tr>
+            <th>No</th>
+            <th>Nama Pasien</th>
+            <th>Nomor Medis</th>
+            <th>Dokter</th>
+            <th>Perawat</th>
+            <th class="text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>                                 
+            <% for(let i = 0; i < pasien.length; i++) { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= pasien[i].nama %></td>
+                    <td><%= pasien[i].no_medis %></td>
+                    <td>
+                         <% pasien[i].dokters.forEach(dokter => { %>
+                              <%= dokter.nama %>
+                        <% }) %>
+                    </td>
+                    <td>
+                        <% pasien[i].perawats.forEach(perawat => { %>
+                              <%= perawat.nama %>
+                        <% }) %>
+                    </td>
+                    <td>
+                        <div class="d-inline">
+                            <form action="/pasien/delete/<%= pasien[i]._id %>?_method=DELETE" class="" method="POST">
+                                <a href="/pasien/detail/<%= pasien[i]._id %>" class="btn btn-info">
+                                    <i class="fa fa-info"></i>
+                                </a>
+                                <a href="/pasien/edit/<%= pasien[i]._id %>" class="btn btn-warning">
+                                    <i class="fa fa-pencil-alt"></i>
+                                </a>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+      </table>
+</div>
